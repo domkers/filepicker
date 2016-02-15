@@ -40,8 +40,11 @@
             this.buttonFontSizeDown = new System.Windows.Forms.Button();
             this.buttonFontSizeUp = new System.Windows.Forms.Button();
             this.labelFileCount = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonFilter = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -70,11 +73,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.buttonUnFix);
             this.groupBox1.Controls.Add(this.buttonFix);
-            this.groupBox1.Location = new System.Drawing.Point(934, 180);
+            this.groupBox1.Location = new System.Drawing.Point(935, 279);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(145, 121);
             this.groupBox1.TabIndex = 2;
@@ -109,9 +111,9 @@
             // 
             this.groupBoxPicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxPicker.Location = new System.Drawing.Point(935, 307);
+            this.groupBoxPicker.Location = new System.Drawing.Point(935, 406);
             this.groupBoxPicker.Name = "groupBoxPicker";
-            this.groupBoxPicker.Size = new System.Drawing.Size(145, 317);
+            this.groupBoxPicker.Size = new System.Drawing.Size(145, 218);
             this.groupBoxPicker.TabIndex = 3;
             this.groupBoxPicker.TabStop = false;
             this.groupBoxPicker.Text = "指派";
@@ -168,11 +170,33 @@
             this.labelFileCount.TabIndex = 6;
             this.labelFileCount.Text = "label2";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.buttonFilter);
+            this.groupBox3.Location = new System.Drawing.Point(935, 172);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(145, 101);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "过滤";
+            // 
+            // buttonFilter
+            // 
+            this.buttonFilter.Location = new System.Drawing.Point(31, 39);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.Size = new System.Drawing.Size(76, 23);
+            this.buttonFilter.TabIndex = 0;
+            this.buttonFilter.Text = "过滤文件";
+            this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
+            // 
             // FormFileName
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 636);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.labelFileCount);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.textBoxFileName);
@@ -186,6 +210,7 @@
             this.Load += new System.EventHandler(this.FormFileName_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +229,8 @@
         private System.Windows.Forms.Button buttonFontSizeDown;
         private System.Windows.Forms.Button buttonFontSizeUp;
         private System.Windows.Forms.Label labelFileCount;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button buttonFilter;
     }
 }
 

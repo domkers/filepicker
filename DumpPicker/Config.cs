@@ -9,6 +9,8 @@ namespace DumpPicker
     {
         public string inifile = System.Environment.CurrentDirectory + "/config.ini";
         public const string inisection = "names";
+        public const string filterSection = "filter";
+
         /// <summary>
         /// 显示的名字
         /// </summary>
@@ -28,6 +30,8 @@ namespace DumpPicker
                 {
                     IniTool.INIWriteValue(inifile, inisection, folder[i], names[i]);
                 }
+                // 过滤词
+                IniTool.INIWriteValue(inifile, filterSection, "keyword", "");
             }
         }
 
@@ -48,6 +52,15 @@ namespace DumpPicker
         public string getName(string key)
         {
             return IniTool.INIGetStringValue(inifile, inisection, key, "unknow");
+        }
+
+        /// <summary>
+        /// 配置存储的关键词，过滤不包含关键词的文件
+        /// </summary>
+        /// <returns></returns>
+        public string getKeyword()
+        {
+            return IniTool.INIGetStringValue(inifile, filterSection, "keyword", "");
         }
     }
 }

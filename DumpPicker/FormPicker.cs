@@ -208,5 +208,33 @@ namespace DumpPicker
             this.labelFileCount.Text = string.Format("{0}个文件", dumpFiles.Count);
         }
 
+        /// <summary>
+        /// 过滤不包含关键词的文件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonFilter_Click(object sender, EventArgs e)
+        {
+            string keyword = config.getKeyword();
+            string[] files = dumpFiles.ToArray();
+            int count = 0;
+            for(int i = 0; i < files.Length; i++)
+            {
+                string content = DumpFiles.ReadFileContent(files[i]);
+                if (!content.Contains(keyword))
+                {
+                    // 没有关键词的要移动到文件夹里
+                    moveFile(files[i], "nokeyword");
+                    count++;
+                }
+            }
+            string showMessage = string.Format("过滤{0}个不包含关键词的文件", count);
+            MessageBox.Show(showMessage, "过滤文件", MessageBoxButtons.OK);
+            if (count > 0)
+            {
+                dumpFiles = DumpFiles.GetFiles(currentPath);
+                showNextDumpFile();
+            }
+        }
     }
 }
